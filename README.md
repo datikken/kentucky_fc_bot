@@ -32,3 +32,23 @@ Whisper downloads the model the first time it runs.
 
 The host must have `ffmpeg` installed so Whisper can decode Telegram audio
 formats.
+
+## Run in the background with Docker
+
+Install Docker Engine and the Docker Compose plugin, then create `.env` as
+described above. Build the image and start the bot in the background:
+
+```bash
+docker compose up -d --build
+```
+
+Compose passes settings from `.env` to the container. The container restarts
+automatically unless it is stopped explicitly, and a named volume retains the
+downloaded Whisper model between container rebuilds.
+
+View bot logs or stop the service with:
+
+```bash
+docker compose logs -f
+docker compose down
+```

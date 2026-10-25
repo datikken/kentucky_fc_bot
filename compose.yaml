@@ -1,0 +1,11 @@
+services:
+  whisper-bot:
+    build: .
+    env_file:
+      - .env
+    restart: unless-stopped
+    volumes:
+      - whisper-models:/home/bot/.cache/whisper
+
+volumes:
+  whisper-models:
