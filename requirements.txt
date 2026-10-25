@@ -1,0 +1,3 @@
+openai-whisper
+python-telegram-bot>=21,<23
+python-dotenv>=1,<2
